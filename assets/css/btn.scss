@@ -1,0 +1,118 @@
+@import './variables.scss';
+
+.btn {
+  font-family: 'Gilroy';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  padding: 0 10px;
+  min-width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  transition: .2s ease;
+  color: $white;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: .2s ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  &_blue-border{
+    background: $white;
+    border: 1px solid $blue;
+    min-width: 70px;
+    font-size: 14px;
+    line-height: 17px;
+    color: $text-primary;
+    transition: all 0.3s ease-out;
+    &:hover{
+      background: $blue;
+      color: $white;
+    }
+  }
+
+  &_blue{
+    background: $blue;
+    min-width: 200px;
+    height: 50px;
+    color: $white;
+  }
+
+  &_delete{
+    min-width: 40px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #DADADA;
+    border-radius: 4px;
+    background-color: transparent;
+    background-image: url("~/assets/img/svg/delete-basket.svg");
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center center;
+    &:hover{
+      border: 1px solid $red;
+    }
+  }
+
+  &_search{
+    min-width: 48px;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #DADADA;
+    border-radius: 4px;
+    background-color: transparent;
+    background-image: url("~/assets/img/svg/search.svg");
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center center;
+    &:hover{
+      background-size: 32px 32px;
+      border: 1px solid $blue;
+    }
+  }
+
+  &_drop{
+    min-width: 24px;
+    height: 24px;
+    padding: 0;
+    background: $white;
+    background-image: url('~/assets/img/svg/drop-btn.svg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transform: rotateX(180deg);
+    &_open{
+      transform: rotateX(0);
+    }
+  }
+
+  &_sendBtn{
+    padding: 0;
+    border: none;
+    background: none;
+    width: 50px;
+    height: 40px;
+    min-width: 40px;
+    background-image: url('~/assets/img/svg/send-message_white.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+  }
+}

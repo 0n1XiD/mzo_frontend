@@ -1,0 +1,215 @@
+.new-client{
+    &__title{
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+    }
+    &__subtitle{
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    &__content{
+        margin-bottom: 30px;
+    }
+    &__buttons{
+        display: flex;
+        justify-content: center;
+        .btn{
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+        }
+    }
+    &__condition{
+        .row{
+            margin-bottom: 30px;
+        }
+        .new-client__subtitle{
+            margin-bottom: 0;
+        }
+        .selection{
+            margin-left: 30px;
+            &__preview{
+                width: 100px;
+            }
+            &__expand{
+                width: 100px;
+            }
+        }
+    }
+    &__issues{
+        .picture{
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .questions{
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .radio-button{
+                &:not(:last-child){
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    &__functional-test{
+        margin-bottom: 30px;
+        padding: 0 30px;
+        display: flex;
+        .questions{
+            margin-left: 50px;
+            &__description{
+                margin-bottom: 30px;
+                font-size: 16px;
+            }
+            .radio-button{
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    &__grid{
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+    &__choices{
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        .choices{
+            &__item{
+                cursor: pointer;
+                width: 150px;
+                height: 200px;
+                border: 1px solid $blue;
+                border-radius: 5px;
+                padding-top: 10px;
+                &:not(:last-child){
+                    margin-right: 40px;
+                }
+                &_active{
+                    .choices__type{
+                        background: $blue;
+                        border: none;
+                        color: $white;
+                    }
+                }
+            }
+            &__image{
+                padding-bottom: 10px;
+                height: 70%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__type{
+                width: 149px;
+                border-top: 1px solid $blue;
+                height: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    &__error{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .input{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .lg-btn{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .new-client{
+        &__condition{
+            .row{
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            .new-client__subtitle{
+                margin-bottom: 10px;
+            }
+            .selection{
+                width: 100%;
+                margin-left: 0;
+                &__preview{
+                    width: 100%;
+                }
+                &__expand{
+                    width: 100%;
+                }
+            }
+        }
+        &__functional-test{
+            padding: 0 10px;
+            flex-direction: column;
+            img{
+                margin-bottom: 20px;
+                width: 100%;
+                height: fit-content;
+            }
+            .questions{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px){
+    .new-client{
+        &__buttons{
+            flex-direction: column;
+            .btn{
+                width: 100%;
+                &:not(:last-child){
+                    margin-bottom: 20px;
+                    margin-right: 0;
+                }
+            }
+        }
+        &__grid{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__issues{
+            .questions{
+                flex-direction: column;
+                align-items: start;
+                .radio-button{
+                    &:not(:last-child){
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+        &__choices{
+            display: block;
+            .choices{
+                &__item{
+                    width: 100%;
+                    &:not(:last-child){
+                        margin-right: 0;
+                        margin-bottom: 20px;
+                    }
+                }
+                &__type{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

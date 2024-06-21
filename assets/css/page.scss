@@ -1,0 +1,136 @@
+.page{
+    &__nav{
+        margin-bottom: 29px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #EBEBEB;
+        .nav{
+            display: flex;
+            &__item{
+                &_mobile{
+                    display: none;
+                }
+                &:not(:last-child){
+                    margin-right: 40px;
+                }
+                &:hover{
+                    color: $orange;
+                }
+                &.nuxt-link-exact-active {
+                    position: relative;
+                    font-weight: bold;
+                    margin-bottom: 1px;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        bottom: -6px;
+                        left: 0;
+                        border-bottom: 2px solid $orange;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .page{
+        &__nav{
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: center;
+            height: 60px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: $white;
+            z-index: 1100;
+            width: 100%;
+            border-radius: 15px 0;
+            box-shadow: 0px -2px 30px rgba(0, 0, 0, 0.25);
+            .nav{
+                &__item{
+                    &_desktop{
+                        display: none !important;
+                    }
+                    &_mobile{
+                        display: flex !important;
+                    }
+                    p{
+                        display: none;
+                    }
+                    .img{
+                        display: block;
+                        width: 24px;
+                        height: 24px;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 24px;
+                    }
+                    .settings-img{
+                        background-image: url("~/assets/img/svg/client-settings.svg");
+                    }
+                    .exercise-img{
+                        background-image: url("~/assets/img/svg/exercise.svg");
+                    }
+                    .photos-img{
+                        background-image: url("~/assets/img/svg/photo.svg");
+                    }
+                    .statistics-img{
+                        background-image: url("~/assets/img/svg/stats.svg");
+                    }
+                }
+                .nuxt-link-exact-active {
+                    position: relative;
+                    font-weight: bold;
+                    color: $blue;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        bottom: -12px;
+                        left: 0;
+                        border-bottom: none;
+                    }
+                    .img{
+                        z-index: 2;
+                        top: -40px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        position: absolute;
+                    }
+                    p{
+                        text-align: center;
+                        display: block;
+                        position: absolute;
+                        bottom: -5px;
+                        z-index: 3;
+                        font-size: 14px;
+                        line-height: 16px;
+                        &.center-text{
+                            bottom: 2px;
+                        }
+                    }
+                    .indicator{
+                        z-index: 1;
+                        display: block;
+                        position: absolute;
+                        top: -60px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 60px;
+                        height: 60px;
+                        background: $blue;
+                        border-radius: 100%;
+                        border: 6px solid $white;
+                        transition: 0.5s
+                    }
+                }
+            }
+        }
+    }
+}

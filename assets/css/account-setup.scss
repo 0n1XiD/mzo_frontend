@@ -1,0 +1,200 @@
+@import './variables.scss';
+
+.account-setup{
+    flex: 1 1 auto;
+    padding: 30px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f2f2f2;
+    height: 100%;
+    z-index: 10;
+    height: 100vh;
+    overflow: auto;
+    &_full{
+        .mzo-client-step{
+            margin-left: 0 !important;
+            width: 100% !important;
+        }
+    }
+    .mzo-client-step{
+        transition: all 0.3s ease-out;
+        margin-top: 30px;
+        margin-left: 265px;
+        max-width: 900px;
+        min-width: 600px;
+        background-color: hsl(0, 0%, 100%);
+        width: fit-content;
+        padding: 30px;
+        border: 1px solid hsl(0, 0%, 92.5%);
+        border-radius: 5px;
+        .title{
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 39px;
+        }
+        .subtitle{
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 19px;
+        }
+        .item{
+            &:not(:last-child){
+                margin-bottom: 35px;
+            }
+            &__title{
+                margin-bottom: 15px;
+                font-weight: 700;
+                &.have-subtitle{
+                    margin-bottom: 5px;
+                }
+            }
+            &__subtitle{
+                margin-bottom: 10px;
+                font-size: 14px;
+                line-height: 19px;
+            }
+            &__field{
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+            }
+            &__selection{
+                .selection__preview, .selection__expand{
+                    width: 100%;
+                }
+            }
+            &__line{
+                margin-bottom: 20px;
+                height: 1px;
+                width: 100%;
+                background-color: $gray;
+            }
+            .indent{
+                margin-bottom: 30px;
+            }
+            &__row{
+                display: flex;
+            }
+            &__row-field{
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+            .input{
+                width: 100%;
+            }
+        }
+        .new-client{
+            &__choices, &__issues{
+                justify-content: left;
+            }
+            &__issues{
+                .questions, .picture{
+                    justify-content: left;
+                }   
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    .account-setup{
+
+    }
+}
+
+@media (max-width: 992px){
+    .account-setup{
+        &_full{
+            .mzo-client-step{
+                margin-left: 0 !important;
+                min-width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+        .mzo-client-step{
+            margin-left: 195px;
+            min-width: 430px;
+            max-width: 515px;
+            .new-client{
+                &__grid{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                &__functional-test{
+                    padding: 0;
+                    flex-direction: column;
+                    align-items: left;
+                    .questions{
+                        margin-left: 0;
+                        &__description{
+                            text-align: left;
+                        }
+                    }
+                }
+                &__choices{
+                    .choices__item{
+                        &:not(:last-child){
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .account-setup{
+        .mzo-client-step{
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width: 576px){
+    .account-setup{
+        padding: 30px 10px;
+        .mzo-client-step{
+            padding: 10px;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 100%;
+            .gender-item{
+                &:first-child{
+                    margin-right: 30px;
+                }
+            }
+            .custom-calendar{
+                overflow: inherit;
+            }
+            .new-client{
+                &__grid{
+                    grid-template-columns: repeat(1, 1fr);
+                }
+                // &__functional-test{
+                //     padding: 0;
+                //     flex-direction: column;
+                //     align-items: left;
+                //     .questions{
+                //         margin-left: 0;
+                //         &__description{
+                //             text-align: left;
+                //         }
+                //     }
+                // }
+                // &__choices{
+                //     .choices__item{
+                //         &:not(:last-child){
+                //             margin-right: 10px;
+                //         }
+                //     }
+                // }
+            }
+        }
+    }
+}
